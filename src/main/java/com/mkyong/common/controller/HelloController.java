@@ -6,10 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/welcome")
 public class HelloController {
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping("/hello", method = RequestMethod.GET)
 	private String printWelcome(ModelMap model) {
 
 		model.addAttribute("message", "Spring 3 MVC Hello World");
@@ -17,7 +16,7 @@ public class HelloController {
 
 	}
 	
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping("/2", method = RequestMethod.GET)
 	private String another(ModelMap model) {
 
 		model.addAttribute("message", "Spring 3 MVC Hello World");
@@ -25,4 +24,8 @@ public class HelloController {
 
 	}
 	
+	@RequestMapping("/greet", method = RequestMethod.GET)
+	private String greet(String greetee) {
+		return "test";
+	}
 }

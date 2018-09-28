@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/home")
 public class IndexController {
   @RequestMapping("/")
-  String get(){
+  private String get(){
     //mapped to hostname:port/home/
     return "Hello from get";
   }

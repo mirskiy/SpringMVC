@@ -1,4 +1,5 @@
 echo Hello
 mkdir test-output || true
-echo 1 > test-output/index.html
-echo 2 > test-output/test.json
+git clone https://github.com/mitre/heimdall-lite || true
+cp heimdall-lite/docs/index.html test-output/index.html
+cp heimdall-lite/data/sample_json/rhel-test1.json test-output/test.json

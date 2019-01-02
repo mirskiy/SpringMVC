@@ -8,4 +8,11 @@ node {
       sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=${env.JOB_NAME}"
     }
   }
+
+  stage('Get SonarQube Results and send to Splunk') {
+    configFileProvider(
+        [configFile(fileId: 'sonarqube-to-splunk', variable: 'SONARSPLUNK_SCRIPT')]) {
+        sh '$SONARSPLUNK_SCRIPT'
+    }
+  }
 }
